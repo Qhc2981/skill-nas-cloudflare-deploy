@@ -19,13 +19,13 @@ Deploy and safely expose Synology NAS applications, web games, or local services
 mkdir -p .agent/skills/nas-cloudflare-deploy
 
 # 下載 Skill 定義檔
-curl -sL https://raw.githubusercontent.com/<YOUR_GITHUB_USERNAME>/skill-nas-cloudflare-deploy/main/SKILL.md -o .agent/skills/nas-cloudflare-deploy/SKILL.md
+curl -sL https://raw.githubusercontent.com/Qhc2981/skill-nas-cloudflare-deploy/main/SKILL.md -o .agent/skills/nas-cloudflare-deploy/SKILL.md
 ```
 
 ### 2. Antigravity 全域安裝（所有專案通用）
 ```bash
 mkdir -p ~/.gemini/antigravity/skills/nas-cloudflare-deploy
-curl -sL https://raw.githubusercontent.com/<YOUR_GITHUB_USERNAME>/skill-nas-cloudflare-deploy/main/SKILL.md -o ~/.gemini/antigravity/skills/nas-cloudflare-deploy/SKILL.md
+curl -sL https://raw.githubusercontent.com/Qhc2981/skill-nas-cloudflare-deploy/main/SKILL.md -o ~/.gemini/antigravity/skills/nas-cloudflare-deploy/SKILL.md
 ```
 
 ---
@@ -73,3 +73,4 @@ skill-nas-cloudflare-deploy/
 ## 📄 License
 
 本專案遵循 [MIT License](LICENSE)。歡迎自由分叉、修改或整合至你自己的 Agent 流程中。
+
