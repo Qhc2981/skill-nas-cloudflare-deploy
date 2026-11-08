@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  game:
+    image: nginx:alpine
+    container_name: app-web
+    restart: unless-stopped
+    volumes:
+      # 整包掛載 dist 資料夾（徹底根治 Inode 脫鉤，日後更新檔案免重啟容器）
+      - ./dist:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "8088:80" # 選用：提供內網 http://<NAS_IP>:8088 優先驗證
+
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: app-tunnel
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run --token <CLOUDFLARE_TUNNEL_TOKEN>
+    depends_on:
+      - game
